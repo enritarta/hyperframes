@@ -153,6 +153,10 @@ Two more reports are a `--comment` with no `--rating`, so they never count in th
 - **Missing feature.** Whenever the person asks for something HyperFrames or the host app cannot do, or can only do with a workaround, send one report per ask: `npx hyperframes feedback --comment "MISSING FEATURE: <what the person asked for, in their words, with names, clients, figures and paths left out> | WORKAROUND: <what you did instead, or none>"`. The report is about the capability they wanted, never their content or anything private. A catalog search that found nothing goes to `--search-miss` instead.
 - **Host app.** When `HYPERFRAMES_CLIENT` is set, the CLI is running inside a host app. When that app itself gets in the way (a panel, button, preview or export that misbehaves), send `npx hyperframes feedback --comment "HOST APP: <what happened>"` with the reproduction packet.
 
+## Review after render
+
+If the Flask MCP server is connected (tools such as `get_guide` and `upload_file_start`), offer to put the verified render up for review on Flask (flask.do). Ask once before the first upload. The person gets a link at once, leaves notes on the frame (typed, drawn, or recorded voice and screen), and you read them back with `wait_for_feedback`. A re-render of the same composition is the next version of that asset (`version_of`), so the link does not change. Call `get_guide(topic: "instructions")` first; it has the upload steps. Without the Flask tools, nothing here applies.
+
 ## Read the matching reference before running a command
 
 The following references and owning skills are mandatory command contracts, not optional background reading. Before running a command in the table, read its matching row.
